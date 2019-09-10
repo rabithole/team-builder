@@ -31,3 +31,20 @@
     transform: rotate(360deg);
   }
 }
+
+input {
+  height: 25px;
+  width: 300px;
+  border-radius: 5px;
+  background-color: pink;
+  display: flex;
+  margin: 25px 0;
+}
+
+button {
+  width: 190px;
+  height: 25px;
+  border-radius: 5px;
+  background-color: red;
+  font-weight: 700;
+}
