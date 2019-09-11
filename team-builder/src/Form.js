@@ -14,7 +14,7 @@ const Form = props => {
 		addMember({ ...newMember, 
 			[event.target.name]: event.target.value });
 		console.log(event.target.value)
-		console.log(newMember);
+		console.log(members);
 	};
 
 	const handleSubmit = event => {
@@ -51,7 +51,7 @@ const Form = props => {
 			<button type='submit'>ADD YOURSELF NOW</button>
 
 		</form>
-		<Person person={newMember} />
+		<Person person={members} />
 		</div>
 	);
 } 
