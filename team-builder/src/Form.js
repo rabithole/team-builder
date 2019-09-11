@@ -1,27 +1,30 @@
 import React, { useState } from 'react';
+import Person from './Person';
 import './App.css';
 
 const Form = props => {
-	const members = { 
-		name: '', 
-		email: '',
-		role: ''
-	}
+	const members = [{ 
+		name: 'test', 
+		email: 'test',
+		role: 'test'
+	}]
 	const [newMember, addMember] = useState(members);
 
 	const handleChange = event => {
 		addMember({ ...newMember, 
 			[event.target.name]: event.target.value });
 		console.log(event.target.value)
+		console.log(newMember);
 	};
 
 	const handleSubmit = event => {
 		event.preventDefault();
-		console.log('sumbitted')
+		console.log(members)
 
 	};
 
 	return (
+		<div>
 		<form onSubmit={handleSubmit}>
 			<h3>Awesome Team Members!</h3>
 			<input 
@@ -47,8 +50,9 @@ const Form = props => {
 			/>
 			<button type='submit'>ADD YOURSELF NOW</button>
 
-			<h3>Name: </h3>
 		</form>
+		<Person person={newMember} />
+		</div>
 	);
 } 
 

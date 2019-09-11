@@ -39,6 +39,7 @@ input {
   background-color: pink;
   display: flex;
   margin: 25px 0;
+  box-shadow: green 5px 5px 5px;
 }
 
 button {
@@ -48,8 +49,17 @@ button {
   background-color: red;
   font-weight: 700;
   display: flex;
+  box-shadow: green 5px 5px 5px;
 }
 
 h3 {
   margin-left: -100px;
+}
+
+.person {
+  background-color: blue;
+  padding: 5px;
+  border-radius: 15px;
+  box-shadow: green 5px 5px 20px;
+  margin-top: 25px;
 }
