@@ -47,4 +47,9 @@ button {
   border-radius: 5px;
   background-color: red;
   font-weight: 700;
+  display: flex;
+}
+
+h3 {
+  margin-left: -100px;
 }
