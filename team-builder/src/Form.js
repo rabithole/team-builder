@@ -4,23 +4,26 @@ import './App.css';
 
 const Form = props => {
 	const members = [{ 
-		name: 'test', 
-		email: 'test',
-		role: 'test'
+		name: 'This', 
+		email: 'must',
+		role: 'work!'
 	}]
 	const [newMember, addMember] = useState(members);
 
 	const handleChange = event => {
-		addMember({ ...newMember, 
-			[event.target.name]: event.target.value });
+		addMember({ 
+			...newMember, 
+			[event.target.name]: event.target.value 
+		});
 		console.log(event.target.value)
-		console.log(members);
+		console.log('New Member', newMember);
 	};
 
 	const handleSubmit = event => {
 		event.preventDefault();
-		console.log(members)
-
+		// console.log(members)
+		addMember([newMember])
+		console.log([newMember]);
 	};
 
 	return (

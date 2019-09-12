@@ -2,7 +2,7 @@ import React from 'react';
 // import Form from './Form';
 
 function Person(props) {
-	console.log(props.person);
+	console.log(props);
 	return (
 		<div>
 			{props.person.map((person, index) => (
