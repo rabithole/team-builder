@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Person from './Person';
 import './App.css';
 
 
@@ -21,8 +20,13 @@ const Form = props => {
 	const handleSubmit = event => {
 		event.preventDefault();
 
-		props.addMember([newPerson, ...props.member])
+		props.addMember([newPerson, ...props.member]);
+		resetForm();
 	}
+
+	const resetForm = () => {
+		addNewMember(Person);
+	};
 
 	return (
 		<div>
