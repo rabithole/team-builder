@@ -2,29 +2,27 @@ import React, { useState } from 'react';
 import Person from './Person';
 import './App.css';
 
+
 const Form = props => {
-	const members = [{ 
-		name: 'This', 
-		email: 'must',
-		role: 'work!'
-	}]
-	const [newMember, addMember] = useState(members);
+	const Person = {
+		name: '',
+		email: '',
+		role: ''
+	}
+	const [newPerson, addNewMember] = useState(Person);
 
 	const handleChange = event => {
-		addMember({ 
-			...newMember, 
-			[event.target.name]: event.target.value 
+		addNewMember({
+			...newPerson,
+			[event.target.name]: event.target.value
 		});
-		console.log(event.target.value)
-		console.log('New Member', newMember);
 	};
 
 	const handleSubmit = event => {
 		event.preventDefault();
-		// console.log(members)
-		addMember([newMember])
-		console.log([newMember]);
-	};
+
+		props.addMember([newPerson, ...props.member])
+	}
 
 	return (
 		<div>
@@ -35,26 +33,25 @@ const Form = props => {
 				name='name'
 				placeholder='FULLNAME'
 				onChange={handleChange}
-				value={newMember.name}
+				value={newPerson.name}
 			/>
 			<input 
 				type='text'
 				name='email'
 				placeholder='EMAIL'
 				onChange={handleChange}
-				value={newMember.email}
+				value={newPerson.email}
 			/>
 			<input
 				type='text'
 				name='role'
 				placeholder='ROLE'
 				onChange={handleChange}
-				value={newMember.role}
+				value={newPerson.role}
 			/>
 			<button type='submit'>ADD YOURSELF NOW</button>
 
 		</form>
-		<Person person={members} />
 		</div>
 	);
 } 

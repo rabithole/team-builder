@@ -5,11 +5,11 @@ function Person(props) {
 	console.log(props);
 	return (
 		<div>
-			{props.person.map((person, index) => (
+			{props.member.map((person, index) => (
 				<div className='person'>
-					<h2>{person.name}</h2>
-					<h2>{person.email}</h2>
-					<h2>{person.role}</h2>
+					<h2>Name: {person.name}</h2>
+					<h2>Email: {person.email}</h2>
+					<h2>Role: {person.role}</h2>
 				</div>
 			))}
 		</div>
